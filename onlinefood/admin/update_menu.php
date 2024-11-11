@@ -5,19 +5,14 @@ include("../connection/connect.php");
 error_reporting(0);
 session_start();
 
-
-
-
 if (isset($_POST['submit']))           //if upload btn is pressed
 {
 
-
-
     if (empty($_POST['d_name']) || empty($_POST['about']) || $_POST['price'] == '' || $_POST['res_name'] == '') {
         $error =     '<div class="alert alert-danger alert-dismissible fade show">
-																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-																<strong>All fields Must be Fillup!</strong>
-															</div>';
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <strong>All fields Must be Fillup!</strong>
+                        </div>';
     } else {
 
         $fname = $_FILES['file']['name'];
@@ -32,36 +27,24 @@ if (isset($_POST['submit']))           //if upload btn is pressed
         if ($extension == 'jpg' || $extension == 'png' || $extension == 'gif') {
             if ($fsize >= 1000000) {
 
-
                 $error =     '<div class="alert alert-danger alert-dismissible fade show">
-																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-																<strong>Max Image Size is 1024kb!</strong> Try different Image.
-															</div>';
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <strong>Max Image Size is 1024kb!</strong> Try different Image.
+                                </div>';
             } else {
-
-
-
 
                 $sql = "update dishes set rs_id='$_POST[res_name]',title='$_POST[d_name]',slogan='$_POST[about]',price='$_POST[price]',img='$fnew' where d_id='$_GET[menu_upd]'";
                 mysqli_query($db, $sql);
                 move_uploaded_file($temp, $store);
 
                 $success =     '<div class="alert alert-success alert-dismissible fade show">
-																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-																<strong>Record Updated!</strong>
-															</div>';
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <strong>Record Updated!</strong>
+                                    </div>';
             }
         }
     }
 }
-
-
-
-
-
-
-
-
 ?>
 
 <head>
@@ -92,19 +75,9 @@ if (isset($_POST['submit']))           //if upload btn is pressed
         <?php include './sidebar.php' ?>
 
         <div class="page-wrapper">
-
-
-
             <div class="container-fluid">
-
-
-
                 <?php echo $error;
                 echo $success; ?>
-
-
-
-
                 <div class="col-lg-12">
                     <div class="card card-outline-primary">
                         <div class="card-header">
@@ -150,17 +123,7 @@ if (isset($_POST['submit']))           //if upload btn is pressed
                                             </div>
                                         </div>
                                     </div>
-
-
-
                                     <div class="row">
-
-
-
-
-
-
-
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label class="control-label">Select Category</label>
@@ -176,11 +139,7 @@ if (isset($_POST['submit']))           //if upload btn is pressed
                                                 </select>
                                             </div>
                                         </div>
-
-
-
                                     </div>
-
                                 </div>
                         </div>
                         <div class="form-actions">
@@ -191,15 +150,10 @@ if (isset($_POST['submit']))           //if upload btn is pressed
                     </div>
                 </div>
             </div>
-
             <footer class="footer"> © 2022 - Online Food Ordering System </footer>
-
         </div>
-
     </div>
-
     </div>
-
     </div>
 
     <script src="js/lib/jquery/jquery.min.js"></script>

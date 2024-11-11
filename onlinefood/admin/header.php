@@ -14,16 +14,9 @@
                 <div class="navbar-collapse">
 
                     <ul class="navbar-nav mr-auto mt-md-0">
-
-
-
-
                     </ul>
 
                     <ul class="navbar-nav my-lg-0">
-
-
-
                         <li class="nav-item dropdown">
 
                             <div class="dropdown-menu dropdown-menu-right mailbox animated zoomIn">

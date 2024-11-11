@@ -45,9 +45,6 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
     <?php include './sidebar.php'?>
     
         <div class="page-wrapper">
-        
-            
-    
             <div class="container-fluid">
      
                 <div class="row">
@@ -68,7 +65,6 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
 											$sql="SELECT users.*, users_orders.* FROM users INNER JOIN users_orders ON users.u_id=users_orders.u_id where o_id='".$_GET['user_upd']."'";
 												$query=mysqli_query($db,$sql);
 												$rows=mysqli_fetch_array($query);
-												
 												
 																		
 												?>
@@ -147,24 +143,14 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
 																			<td>  <center><button type="button" class="btn btn-danger"> <i class="fa fa-close"></i> Cancelled</button> </center></td> 
 																			<?php 
 																			} 
-																			?>
-													  
-												   																							
-											</tr>
-											
-																				
-																															
-																						
-									
-                                            
-                                           
+																			?>																			
+											</tr>  
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
                         </div>
 						 </div>
-                      
                             </div>
                         </div>
                     </div>

@@ -63,89 +63,6 @@ label.control-label {
   color: #777;
 }
 
-/* 
-table { 
-	width: 750px; 
-	border-collapse: collapse; 
-	margin: auto;
-	
-	}
-
-/* Zebra striping */
-/* tr:nth-of-type(odd) { 
-	background: #eee; 
-	}
-
-th { 
-	background: #404040; 
-	color: white; 
-	font-weight: bold; 
-	
-	}
-
-td, th { 
-	padding: 10px; 
-	border: 1px solid #ccc; 
-	text-align: left; 
-	font-size: 14px;
-	
-	} */ */
-
-
-@media 
-only screen and (max-width: 760px),
-(min-device-width: 768px) and (max-device-width: 1024px)  {
-
-	/* table { 
-	  	width: 100%; 
-	}
-
-	
-	table, thead, tbody, th, td, tr { 
-		display: block; 
-	} */
-	
-	
-	/* thead tr { 
-		position: absolute;
-		top: -9999px;
-		left: -9999px;
-	}
-	
-	tr { border: 1px solid #ccc; } */
-	
-	/* td { 
-		
-		border: none;
-		border-bottom: 1px solid #eee; 
-		position: relative;
-		padding-left: 50%; 
-	}
-
-	td:before { 
-		
-		position: absolute;
-	
-		top: 6px;
-		left: 6px;
-		width: 45%; 
-		padding-right: 10px; 
-		white-space: nowrap;
-		
-		content: attr(data-column);
-
-		color: #000;
-		font-weight: bold;
-	} */
-
-}
-
-
-
-
-
-
-
 	</style>
 
 	</head>
@@ -242,82 +159,61 @@ only screen and (max-width: 760px),
 										  {
 						
 							?>
-												<tr>	
-														 <td data-column="Item"> <?php echo $row['title']; ?></td>
-														  <td data-column="Quantity"> <?php echo $row['quantity']; ?></td>
-														  <td data-column="price">₹<?php echo $row['price']; ?></td>
-														   <td data-column="status"> 
-														   <?php 
-																			$status=$row['status'];
-																			if($status=="" or $status=="NULL")
-																			{
-																			?>
-																			<button type="button" class="btn btn-info"><span class="fa fa-bars"  aria-hidden="true" ></span> Dispatch</button>
-																		   <?php 
-																			  }
-																			   if($status=="in process")
-																			 { ?>
-																				<button type="button" class="btn btn-warning"><span class="fa fa-cog fa-spin"  aria-hidden="true" ></span> On The Way!</button>
-																			<?php
-																				}
-																			if($status=="closed")
-																				{
-																			?>
-																			 <button type="button" class="btn btn-success" ><span  class="fa fa-check-circle" aria-hidden="true"></span> Delivered</button> 
-																			<?php 
-																			} 
-																			?>
-																			<?php
-																			if($status=="rejected")
-																				{
-																			?>
-																			 <button type="button" class="btn btn-danger"> <i class="fa fa-close"></i> Cancelled</button>
-																			<?php 
-																			} 
-																			?>
-														   
-														   
-														   
-														   
-														   
-														   
-														   </td>
-														  <td data-column="Date"> <?php echo $row['date']; ?></td>
-														   
-														  <td data-column="Action"> 
-														  <?php 
-																			$status=$row['status'];
-																			if($status=="" or $status=="NULL")
-																			{
-																			?>
-														  <a href="delete_orders.php?order_del=<?php echo $row['o_id'];?>" onclick="return confirm('Are you sure you want to cancel your order?');" class="btn btn-danger btn-flat btn-addon btn-xs m-b-10"><i class="fa fa-trash-o" style="font-size:16px"></i></a> 
-															
-														  <?php } ?>	
-														</td>
+					<tr>	
+								<td data-column="Item"> <?php echo $row['title']; ?></td>
+								<td data-column="Quantity"> <?php echo $row['quantity']; ?></td>
+								<td data-column="price">₹<?php echo $row['price']; ?></td>
+								<td data-column="status"> 
+								<?php 
+												$status=$row['status'];
+												if($status=="" or $status=="NULL")
+												{
+												?>
+												<button type="button" class="btn btn-info"><span class="fa fa-bars"  aria-hidden="true" ></span> Dispatch</button>
+												<?php 
+													}
+													if($status=="in process")
+													{ ?>
+													<button type="button" class="btn btn-warning"><span class="fa fa-cog fa-spin"  aria-hidden="true" ></span> On The Way!</button>
+												<?php
+													}
+												if($status=="closed")
+													{
+												?>
+													<button type="button" class="btn btn-success" ><span  class="fa fa-check-circle" aria-hidden="true"></span> Delivered</button> 
+												<?php 
+												} 
+												?>
+												<?php
+												if($status=="rejected")
+													{
+												?>
+													<button type="button" class="btn btn-danger"> <i class="fa fa-close"></i> Cancelled</button>
+												<?php 
+												} 
+												?>
+								
+								</td>
+									<td data-column="Date"> <?php echo $row['date']; ?></td>
+									
+									<td data-column="Action"> 
+									<?php 
+										$status=$row['status'];
+										if($status=="" or $status=="NULL")
+										{
+										?>
+									<a href="delete_orders.php?order_del=<?php echo $row['o_id'];?>" onclick="return confirm('Are you sure you want to cancel your order?');" class="btn btn-danger btn-flat btn-addon btn-xs m-b-10"><i class="fa fa-trash-o" style="font-size:16px"></i></a> 
+									
+									<?php } ?>	
+								</td>
 														 
-												</tr>
-												
-											
-														<?php }} ?>					
-							
-							
-										
-						
+								</tr>
+<?php }} ?>					
 						  </tbody>
-					</table>
-						
-					
-                                    
-                                </div>
-                           
-                            </div>
-                         
-                            
-                                
-                            </div>
-                          
-                          
-                           
+					</table>            
+				</div>
+			 </div>                      
+			</div>                      
                         </div>
                     </div>
                 </div>

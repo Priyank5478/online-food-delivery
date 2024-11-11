@@ -125,10 +125,7 @@ $ret2=mysqli_query($db,"select * FROM users where u_id='".$ro['u_id']."'");
 while($row=mysqli_fetch_array($ret2))
 {
 ?>
-
-    
   
-		
     <tr>
       <td colspan="2"><b><?php echo $row['f_name'];?>'s profile</b></td>
       
